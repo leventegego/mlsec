@@ -1,0 +1,384 @@
+[
+  {
+    "name": "duration",
+    "description": "Length of the connection in seconds",
+    "column_number": 0,
+    "type": "continuous",
+    "modifiability": "HIGHLY_MODIFIABLE"
+  },
+  {
+    "name": "protocol_type",
+    "description": "Type of protocol used",
+    "column_number": 1,
+    "type": "discrete",
+    "flag_values": {
+      "tcp": "Transmission Control Protocol",
+      "udp": "User Datagram Protocol",
+      "icmp": "Internet Control Message Protocol"
+    },
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "service",
+    "description": "Network service on the destination",
+    "column_number": 2,
+    "type": "discrete",
+    "flag_values": {
+      "http": "Hypertext Transfer Protocol",
+      "smtp": "Simple Mail Transfer Protocol",
+      "ftp": "File Transfer Protocol",
+      "telnet": "Telnet",
+      "ssh": "Secure Shell",
+      "domain": "DNS",
+      "private": "Private service",
+      "other": "Other services"
+    },
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "flag",
+    "description": "Status of the connection",
+    "column_number": 3,
+    "type": "discrete",
+    "flag_values": {
+      "SF": "Normal establishment and termination",
+      "S0": "Connection attempt, no reply",
+      "REJ": "Connection rejected",
+      "RSTR": "Connection reset by responder",
+      "RSTO": "Connection reset by originator",
+      "SH": "SYN-ACK seen, no completion",
+      "S1": "Established and closed by originator",
+      "S2": "Established and closed by responder",
+      "S3": "Originator sent SYN-FIN",
+      "RSTOS0": "Originator sent SYN-RST",
+      "OTH": "Other"
+    },
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "src_bytes",
+    "description": "Number of data bytes from source to destination",
+    "column_number": 4,
+    "type": "continuous",
+    "modifiability": "HIGHLY_MODIFIABLE"
+  },
+  {
+    "name": "dst_bytes",
+    "description": "Number of data bytes from destination to source",
+    "column_number": 5,
+    "type": "continuous",
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "land",
+    "description": "1 if connection is from/to the same host/port, 0 otherwise",
+    "column_number": 6,
+    "type": "discrete",
+    "flag_values": {
+      "0": "Different source and destination",
+      "1": "Same source and destination"
+    },
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "wrong_fragment",
+    "description": "Number of wrong fragments",
+    "column_number": 7,
+    "type": "continuous",
+    "modifiability": "HIGHLY_MODIFIABLE"
+  },
+  {
+    "name": "urgent",
+    "description": "Number of urgent packets",
+    "column_number": 8,
+    "type": "continuous",
+    "modifiability": "HIGHLY_MODIFIABLE"
+  },
+  {
+    "name": "hot",
+    "description": "Number of hot indicators (access to system files, creating executables)",
+    "column_number": 9,
+    "type": "continuous",
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "num_failed_logins",
+    "description": "Number of failed login attempts",
+    "column_number": 10,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "logged_in",
+    "description": "1 if successfully logged in, 0 otherwise",
+    "column_number": 11,
+    "type": "discrete",
+    "flag_values": {
+      "0": "Not logged in",
+      "1": "Successfully logged in"
+    },
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "num_compromised",
+    "description": "Number of compromised conditions",
+    "column_number": 12,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "root_shell",
+    "description": "1 if root shell is obtained, 0 otherwise",
+    "column_number": 13,
+    "type": "discrete",
+    "flag_values": {
+      "0": "No root shell",
+      "1": "Root shell obtained"
+    },
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "su_attempted",
+    "description": "1 if su root command attempted, 0 otherwise",
+    "column_number": 14,
+    "type": "discrete",
+    "flag_values": {
+      "0": "No su attempt",
+      "1": "Su root attempted"
+    },
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "num_root",
+    "description": "Number of root accesses",
+    "column_number": 15,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "num_file_creations",
+    "description": "Number of file creation operations",
+    "column_number": 16,
+    "type": "continuous",
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "num_shells",
+    "description": "Number of shell prompts",
+    "column_number": 17,
+    "type": "continuous",
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "num_access_files",
+    "description": "Number of operations on access control files",
+    "column_number": 18,
+    "type": "continuous",
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "num_outbound_cmds",
+    "description": "Number of outbound commands in FTP session",
+    "column_number": 19,
+    "type": "continuous",
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "is_host_login",
+    "description": "1 if login belongs to host list, 0 otherwise",
+    "column_number": 20,
+    "type": "discrete",
+    "flag_values": {
+      "0": "Not a host login",
+      "1": "Host login"
+    },
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "is_guest_login",
+    "description": "1 if login is a guest login, 0 otherwise",
+    "column_number": 21,
+    "type": "discrete",
+    "flag_values": {
+      "0": "Not a guest login",
+      "1": "Guest login"
+    },
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "count",
+    "description": "Number of connections to the same host in past 2 seconds",
+    "column_number": 22,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "srv_count",
+    "description": "Number of connections to same service in past 2 seconds",
+    "column_number": 23,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "serror_rate",
+    "description": "Percentage of connections with SYN errors",
+    "column_number": 24,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "srv_serror_rate",
+    "description": "Percentage of connections with SYN errors for same service",
+    "column_number": 25,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "rerror_rate",
+    "description": "Percentage of connections with REJ errors",
+    "column_number": 26,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "srv_rerror_rate",
+    "description": "Percentage of connections with REJ errors for same service",
+    "column_number": 27,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "same_srv_rate",
+    "description": "Percentage of connections to same service",
+    "column_number": 28,
+    "type": "continuous",
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "diff_srv_rate",
+    "description": "Percentage of connections to different services",
+    "column_number": 29,
+    "type": "continuous",
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "srv_diff_host_rate",
+    "description": "Percentage of connections to different hosts for same service",
+    "column_number": 30,
+    "type": "continuous",
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "dst_host_count",
+    "description": "Number of connections to same destination host",
+    "column_number": 31,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "dst_host_srv_count",
+    "description": "Number of connections to same service on destination host",
+    "column_number": 32,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "dst_host_same_srv_rate",
+    "description": "Percentage of connections to same service on destination host",
+    "column_number": 33,
+    "type": "continuous",
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "dst_host_diff_srv_rate",
+    "description": "Percentage of connections to different services on destination host",
+    "column_number": 34,
+    "type": "continuous",
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "dst_host_same_src_port_rate",
+    "description": "Percentage of connections from same source port",
+    "column_number": 35,
+    "type": "continuous",
+    "modifiability": "PARTIALLY_MODIFIABLE"
+  },
+  {
+    "name": "dst_host_srv_diff_host_rate",
+    "description": "Percentage of connections to service from different hosts",
+    "column_number": 36,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "dst_host_serror_rate",
+    "description": "Percentage of connections with SYN errors to destination host",
+    "column_number": 37,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "dst_host_srv_serror_rate",
+    "description": "Percentage of connections with SYN errors to service on destination host",
+    "column_number": 38,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "dst_host_rerror_rate",
+    "description": "Percentage of connections with REJ errors to destination host",
+    "column_number": 39,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "dst_host_srv_rerror_rate",
+    "description": "Percentage of connections with REJ errors to service on destination host",
+    "column_number": 40,
+    "type": "continuous",
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "label",
+    "description": "Attack type label",
+    "column_number": 41,
+    "type": "discrete",
+    "flag_values": {
+      "normal": "Normal traffic",
+      "neptune": "DoS attack",
+      "smurf": "DoS attack",
+      "back": "DoS attack",
+      "teardrop": "DoS attack",
+      "pod": "DoS attack",
+      "land": "DoS attack",
+      "portsweep": "Probe attack",
+      "ipsweep": "Probe attack",
+      "nmap": "Probe attack",
+      "satan": "Probe attack",
+      "warezclient": "R2L attack",
+      "guess_passwd": "R2L attack",
+      "warezmaster": "R2L attack",
+      "imap": "R2L attack",
+      "ftp_write": "R2L attack",
+      "multihop": "R2L attack",
+      "phf": "R2L attack",
+      "spy": "R2L attack",
+      "buffer_overflow": "U2R attack",
+      "rootkit": "U2R attack",
+      "loadmodule": "U2R attack",
+      "perl": "U2R attack"
+    },
+    "modifiability": "NON_MODIFIABLE"
+  },
+  {
+    "name": "difficulty",
+    "description": "Difficulty level of detection (0=easy, 1=hard)",
+    "column_number": 42,
+    "type": "discrete",
+    "flag_values": {
+      "0": "Easy to detect",
+      "1": "Hard to detect"
+    },
+    "modifiability": "NON_MODIFIABLE"
+  }
+]
